@@ -24,7 +24,7 @@ Parts of this repository are adapted from [Dyke-F/MIRA](https://github.com/Dyke-
 - `src/dataset/`: MIMIC dataset loaders and adapters.
 
 ## Setup
-- Python >= 3.11 (see `pyproject.toml`).
+- Python >= 3.13 (see `pyproject.toml`).
 - Install dependencies (choose one):
 
 ```bash
