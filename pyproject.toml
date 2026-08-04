@@ -1,0 +1,27 @@
+[project]
+name = "medical-llama-agents"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "einops>=0.8.1",
+    "ipykernel>=6.29.5",
+    "markdown>=3.7",
+    "openai>=1.57.2",
+    "openai-agents[litellm]",
+    "pandas>=2.2.3",
+    "pyarrow>=18.1.0",
+    "pydantic>=2.10.3",
+    "python-dotenv>=1.0.1",
+    "qdrant-client>=1.15.1",
+    "requests>=2.32.3",
+    "tenacity>=9.0.0",
+    "termcolor>=2.5.0",
+    "torch>=2.7.1",
+    "tqdm>=4.67.1",
+    "transformers>=4.54.1",
+]
+
+[tool.uv.sources]
+openai-agents = { git = "https://github.com/lilian-zh/openai-agents-python.git" }
