@@ -12,6 +12,9 @@ On-Prem Medical Agents is a codebase for running medical dialogue simulations (d
 ## Attribution
 Parts of this repository are adapted from [Dyke-F/MIRA](https://github.com/Dyke-F/MIRA).
 
+## License
+This repository is licensed under the [Creative Commons Attribution 4.0 International License (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/).
+
 ## Repository layout
 - `src/simulate.py`: main simulation runner (async, multi-patient, per-run output folders).
 - `src/evaluate.py`: diagnosis evaluation runner.
@@ -53,7 +56,10 @@ Select the benchmark through `BENCHMARK` in `src/configs/agent_config.py`:
 - `CDM`: uses `CDM_HADM_IDS` and the MIMIC dataset loader.
 - `VIVABENCH`: loads the JSONL file configured by `VIVABENCH_DATA_PATH`; use `--case_id <case_id>` to run one case.
 
-The selected benchmark determines the prompt set and dataset-loading path. Configure the required dataset paths and identifiers before running simulations; datasets are not included in this repository.
+The selected benchmark determines the prompt set and dataset-loading path. Configure the required dataset paths and identifiers before running simulations.
+
+### Included test data
+The `data/` directory contains only one synthetic appendicitis test case for smoke testing. It is not a real clinical dataset or a complete benchmark. Obtain full datasets from their original papers or upstream repositories and follow their applicable access and use terms.
 
 ## Run simulations
 Run a single simulation batch (writes JSON conversation logs per dataset):
