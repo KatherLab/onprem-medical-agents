@@ -12,9 +12,6 @@ On-Prem Medical Agents is a codebase for running medical dialogue simulations (d
 ## Attribution
 Parts of this repository are adapted from [Dyke-F/MIRA](https://github.com/Dyke-F/MIRA).
 
-## License
-This repository is licensed under the [Creative Commons Attribution 4.0 International License (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/).
-
 ## Repository layout
 - `src/simulate.py`: main simulation runner (async, multi-patient, per-run output folders).
 - `src/evaluate.py`: diagnosis evaluation runner.
@@ -126,3 +123,6 @@ If `master_feature_dataframe.csv` already exists in the configured `processed_di
 ## Configuration quick reference
 - Simulation models, datasets, and run limits: `src/configs/agent_config.py`.
 - Confidence analysis paths and feature flags: `src/configs/analysis_config.yaml`.
+
+## License
+This repository is licensed under the [Creative Commons Attribution 4.0 International License (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/).
