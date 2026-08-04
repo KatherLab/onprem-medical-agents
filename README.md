@@ -49,7 +49,7 @@ Agent-specific `MEDICAL_ASSISTANT_*` and `PATIENT_ASSISTANT_*` settings take pre
 ## Benchmarks and data
 Select the benchmark through `BENCHMARK` in `src/configs/agent_config.py`:
 
-- `AIDOC`: uses `AIDOC_HADM_IDS` and the MIMIC dataset loader.
+- `MIRA`: uses `AIDOC_HADM_IDS` and the MIMIC dataset loader.
 - `CDM`: uses `CDM_HADM_IDS` and the MIMIC dataset loader.
 - `VIVABENCH`: loads the JSONL file configured by `VIVABENCH_DATA_PATH`; use `--case_id <case_id>` to run one case.
 
