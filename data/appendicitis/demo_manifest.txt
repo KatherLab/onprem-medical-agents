@@ -1,0 +1,17 @@
+selected_hadm_id: 92000001
+file	original_rows	filtered_rows
+admissions.parquet	762	1
+diagnosis_ed.parquet	639	1
+diagnosis_icd.parquet	2427	2
+ed_stays.parquet	571	1
+history_pe_admedication_diagnosis.parquet	762	1
+lab_events.parquet	52182	55
+medication.parquet	10452	12
+medrecon.parquet	1386	1
+microbiology.parquet	1556	3
+patients.parquet	762	1
+procedures_icd.parquet	1960	1
+pyxis.parquet	2977	7
+radiology.parquet	1013	1
+triage.parquet	571	1
+vitalsign.parquet	1726	2

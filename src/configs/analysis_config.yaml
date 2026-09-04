@@ -1,0 +1,161 @@
+benchmark: AIDOC #VIVABENCH #CDM
+
+datasets:
+  AIDOC:
+    - appendicitis
+    - cholecystitis
+    - diverticulitis
+    - pancreatitis
+    - pneumonia
+    - pulmonary_embolism
+    - uti
+
+  CDM:
+    - appendicitis
+    - cholecystitis
+    - diverticulitis
+    - pancreatitis
+
+  VIVABENCH:
+    - vivabench_pubmed
+
+
+# --- Path configuration (can override or extend base_config) ---
+data:
+  # Aggregated data used by data_loader
+  aggregated_dir: /mnt/bulk-uranus/lizhang/LiWorkSpace/data/evaluation/84/84.10
+  # Final output for feature engineering
+  processed_dir: /mnt/bulk-uranus/lizhang/LiWorkSpace/data/evaluation/84/84.10
+
+results:
+  plots_base_dir: /mnt/bulk-uranus/lizhang/LiWorkSpace/data/plots/84/84.10/confidence
+  
+# --- Feature engineering configuration ---
+feature_engineering:
+  # Global toggle: enable Reasoning Trace analysis (Internal, Expressed, Behavioral)
+  enable_reasoning_analysis: true
+
+# Cosine similarity threshold used to collapse semantically equivalent diagnosis
+# variants into the same cluster before computing discrete semantic entropy.
+semantic_entropy_similarity_threshold_dx: 0.85
+
+statistics:
+  bootstrap_iterations: 2000
+  bootstrap_confidence_level: 0.95
+  bootstrap_random_seed: 42
+  delong_pairs:
+    - ["Consistency_Dx", "ProbScore_Dx"]
+    - ["Consistency_Dx", "SemanticCertainty_Dx"]
+    - ["Consistency_Dx", "Bottom3Prob_Dx"]
+    - ["Consistency_Dx", "TraceConsistency_Dx"]
+
+sentence_embedding_model: "sentence-transformers/all-MiniLM-L6-v2"
+# sentence_embedding_model: "sentence-transformers/all-mpnet-base-v2"
+# sentence_embedding_model: "BAAI/bge-base-en-v1.5"
+
+
+lexicons:
+  uncertainty_phrases:
+    # - "possible"
+    # - "likely"
+    # - "suspected"
+    # - "cannot rule out"
+    # - " vs "
+    # - "might"
+    # - "probable"
+    # - "concern for"
+    # - "suggests"
+    # - "worrisome for"
+    # - "appears"
+    # - "indeterminate"
+    # - "question of"
+    # - "consider"
+    # - "suspicious for"
+    # # new added 33
+    # - "unlikely"
+    # - "certain"
+    # - "never"
+    # - "sometimes"
+    # - "rarely"
+    # - "often"
+    # - "almost"
+    # - "perhaps"
+    # - "occasionally"
+    # - "frequent"
+    # - "compatible with"
+    # - "improbable"
+    # - "always"
+    # - "probably"
+    # - "consistent with"
+    # - "possibly"
+    # - "not unreasonable"
+    # - "doubtful"
+    # - "not certain"
+    # - "low probability"
+    # - "usually"
+    # - "suggestive"
+    # - "not likely"
+    # - "low chance"
+    # - "no evidence of"
+    # - "possibility of"
+    # - "versus"
+    # - "uncertain"
+    # - "unclear"
+    # - "maybe"
+    # - "suspected"
+    # - "equivocal"
+    # - "not excluded"
+
+    # 精简后
+    # Modal verbs
+    - "may"
+    - "might"
+    - "could"
+
+    # Hedging verbs
+    - "suggest"
+    - "suggests"
+    - "suggesting"
+    - "indicate"
+    - "indicates"
+    - "appear"
+    - "appears"
+    - "seem"
+    - "seems"
+    - "suspect"
+    - "suspected"
+
+    # Probabilistic adjectives/adverbs
+    - "possible"
+    - "possibly"
+    - "probable"
+    - "probably"
+    - "likely"
+    - "unlikely"
+    - "potential"
+    - "potentially"
+    - "presumed"
+    - "uncertain"
+    - "unclear"
+    - "questionable"
+    - "equivocal"
+    - "improbable"
+    - "doubtful"
+    - "suggestive"
+    - "approximate"
+    - "perhaps"
+    - "maybe"
+    - "presumably"
+    - "apparently"
+
+  # certainty_phrases:
+  #   - "confirms"
+  #   - "is diagnostic of"
+  #   - "rules in"
+
+  # uncertainty_weights:
+  #   possible: 3
+  #   maybe: 3
+  #   suspected: 2
+  #   likely: 1
+  #   # ... etc
